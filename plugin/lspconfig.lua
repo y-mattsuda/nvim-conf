@@ -1,0 +1,54 @@
+-- LSP Server management
+require("mason").setup()
+require("mason-lspconfig").setup()
+require("mason-lspconfig").setup_handlers({
+	function(server)
+		local opt = {
+			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		}
+		require("lspconfig")[server].setup(opt)
+	end,
+})
+require("mason-null-ls").setup({
+	automatic_setup = true,
+	handlers = {},
+})
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+require("null-ls").setup({
+	on_attach = function(client, bufnr)
+		-- format on save
+		-- ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#sync-formatting
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ async = false })
+				end,
+			})
+		end
+	end,
+})
+
+-- keymap
+-- built-in
+vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+-- Lspsaga
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+vim.keymap.set("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")
+vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+vim.keymap.set("n", "gn", "<cmd>Lspsaga rename<CR>")
+vim.keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>")
+vim.keymap.set("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>")
+vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+-- Telescope
+vim.keymap.set("n", "gE", "<cmd>Telescope diagnostics<CR>")
+vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>")
+vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>")
+-- LSP handlers
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
