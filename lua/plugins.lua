@@ -24,7 +24,6 @@ require("packer").startup(function()
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
-	use("jay-babu/mason-null-ls.nvim")
 	-- Tools for better development in rust using neovim's builtin lsp
 	use("simrat39/rust-tools.nvim")
 	-- Standalone UI for nvim-lsp progress
@@ -62,6 +61,8 @@ require("packer").startup(function()
 	use("lambdalisue/nerdfont.vim")
 	-- 🌿 fern.vim plugin which add file type icon through nerdfont.vim
 	use("lambdalisue/fern-renderer-nerdfont.vim")
+	-- 🌿 Add Git status badge integration on file:// scheme on fern.vim
+	use("lambdalisue/fern-git-status.vim")
 
 	-- A snazzy bufferline for Neovim
 	use({
@@ -151,5 +152,21 @@ require("packer").startup(function()
 		requires = {
 			{ "MunifTanjim/nui.nvim" },
 		},
+	})
+	-- Fully featured & enhanced replacement for copilot.vim complete with API for interacting with Github Copilot
+	-- use({
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	disable = true,
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("copilot").setup({})
+	-- 	end,
+	-- })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	})
 end)

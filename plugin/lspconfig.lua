@@ -9,13 +9,25 @@ require("mason-lspconfig").setup_handlers({
 		require("lspconfig")[server].setup(opt)
 	end,
 })
-require("mason-null-ls").setup({
-	automatic_setup = true,
-	handlers = {},
-})
-
+-- require("mason-null-ls").setup({
+-- 	automatic_setup = true,
+-- 	handlers = {},
+-- })
+local null_ls = require("null-ls")
+local sources = {
+    -- lua
+    null_ls.builtins.formatting.stylua,
+	-- python
+	null_ls.builtins.diagnostics.ruff,
+	null_ls.builtins.formatting.black,
+    -- go
+	null_ls.builtins.formatting.gofmt,
+    -- javascript, typescript
+    null_ls.builtins.formatting.prettier,
+}
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-require("null-ls").setup({
+null_ls.setup({
+	sources = sources,
 	on_attach = function(client, bufnr)
 		-- format on save
 		-- ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#sync-formatting
@@ -52,3 +64,10 @@ vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>")
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
 	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false })
+
+-- Severity signs in nvim lsp diagnostics
+local signs = { Error = " ", Warn = " ", Info = " ", Hint = " " }
+for type, icon in pairs(signs) do
+	local h1 = "DiagnosticSign" .. type
+	vim.fn.sign_define(h1, { text = icon, texth1 = h1, numh1 = h1 })
+end

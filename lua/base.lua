@@ -31,7 +31,9 @@ local keymap = vim.keymap
 -- Fern
 vim.g["fern#renderer"] = "nerdfont"
 vim.g["fern#renderer#nerdfont#indent_markers"] = 1
+vim.g["fern#default_hidden"] = 1
 keymap.set("n", "<C-f>", ":Fern . -drawer -reveal=% -toggle -width=30<CR>", { silent = true })
+
 
 vim.g.mapleader = " "
 keymap.set("i", "jj", "<Esc>")
