@@ -15,15 +15,16 @@ require("mason-lspconfig").setup_handlers({
 -- })
 local null_ls = require("null-ls")
 local sources = {
-    -- lua
-    null_ls.builtins.formatting.stylua,
+	-- lua
+	null_ls.builtins.formatting.stylua,
 	-- python
 	null_ls.builtins.diagnostics.ruff,
 	null_ls.builtins.formatting.black,
-    -- go
+	-- go
 	null_ls.builtins.formatting.gofmt,
-    -- javascript, typescript
-    null_ls.builtins.formatting.prettier,
+	-- javascript, typescript
+	null_ls.builtins.formatting.prettier,
+	require("typescript.extensions.null-ls.code-actions"),
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
@@ -47,7 +48,11 @@ null_ls.setup({
 -- keymap
 -- built-in
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration<CR>")
+vim.api.nvim_create_autocmd(
+	"FileType",
+	{ pattern = "typescript", command = [[nnoremap <buffer><silent> gD :TypescriptGoToSourceDefinition<CR>]] }
+)
 -- Lspsaga
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 vim.keymap.set("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")

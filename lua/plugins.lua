@@ -26,6 +26,13 @@ require("packer").startup(function()
 	})
 	-- Tools for better development in rust using neovim's builtin lsp
 	use("simrat39/rust-tools.nvim")
+	-- A Lua plugin, written in TypeScript, to write TypeScript (Lua optional).
+	use({
+		"jose-elias-alvarez/typescript.nvim",
+		config = function()
+			require("typescript").setup({})
+		end,
+	})
 	-- Standalone UI for nvim-lsp progress
 	use("j-hui/fidget.nvim")
 	-- improve neovim lsp experience

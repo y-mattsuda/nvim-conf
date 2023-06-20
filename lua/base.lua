@@ -34,6 +34,9 @@ vim.g["fern#renderer#nerdfont#indent_markers"] = 1
 vim.g["fern#default_hidden"] = 1
 keymap.set("n", "<C-f>", ":Fern . -drawer -reveal=% -toggle -width=30<CR>", { silent = true })
 
+-- MarkdownPreview
+vim.g["mkdp_auto_close"] = 0
+vim.g["mkdp_refresh_slow"] = 1
 
 vim.g.mapleader = " "
 keymap.set("i", "jj", "<Esc>")
