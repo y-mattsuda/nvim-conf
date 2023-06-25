@@ -48,7 +48,7 @@ null_ls.setup({
 -- keymap
 -- built-in
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration<CR>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.api.nvim_create_autocmd(
 	"FileType",
 	{ pattern = "typescript", command = [[nnoremap <buffer><silent> gD :TypescriptGoToSourceDefinition<CR>]] }
