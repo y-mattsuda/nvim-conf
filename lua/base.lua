@@ -31,7 +31,7 @@ local keymap = vim.keymap
 -- Fern
 vim.g["fern#renderer"] = "nerdfont"
 vim.g["fern#renderer#nerdfont#indent_markers"] = 1
-vim.g["fern#default_hidden"] = 1
+vim.g["fern#default_hidden"] = 0
 keymap.set("n", "<C-f>", ":Fern . -drawer -reveal=% -toggle -width=30<CR>", { silent = true })
 
 -- MarkdownPreview

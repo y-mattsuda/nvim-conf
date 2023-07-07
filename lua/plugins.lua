@@ -33,6 +33,16 @@ require("packer").startup(function()
 			require("typescript").setup({})
 		end,
 	})
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim",
+		},
+		config = function()
+			require("flutter-tools").setup({})
+		end,
+	})
 	-- Standalone UI for nvim-lsp progress
 	use("j-hui/fidget.nvim")
 	-- improve neovim lsp experience
