@@ -29,6 +29,9 @@ local sources = {
 	null_ls.builtins.diagnostics.textlint.with({ filetypes = { "markdown" } }),
 	-- protobuf
 	null_ls.builtins.diagnostics.buf,
+	null_ls.builtins.formatting.buf,
+	--go
+	null_ls.builtins.diagnostics.staticcheck,
 	require("typescript.extensions.null-ls.code-actions"),
 }
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

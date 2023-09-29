@@ -33,18 +33,8 @@ require("packer").startup(function()
 			require("typescript").setup({})
 		end,
 	})
-	use({
-		"akinsho/flutter-tools.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"stevearc/dressing.nvim",
-		},
-		config = function()
-			require("flutter-tools").setup({})
-		end,
-	})
-	-- Standalone UI for nvim-lsp progress
-	use("j-hui/fidget.nvim")
+	-- -- Standalone UI for nvim-lsp progress
+	-- use("j-hui/fidget.nvim")
 	-- improve neovim lsp experience
 	use({
 		"glepnir/lspsaga.nvim",
@@ -133,7 +123,7 @@ require("packer").startup(function()
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			require("indent_blankline").setup({
+			require("ibl").setup({
 				space_char_blankline = " ",
 				show_current_context = true,
 				show_current_context_start = true,
