@@ -37,12 +37,14 @@ require("packer").startup(function()
 	-- use("j-hui/fidget.nvim")
 	-- improve neovim lsp experience
 	use({
-		"glepnir/lspsaga.nvim",
-		opt = true,
-		branch = "main",
-		event = "LspAttach",
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
 		config = function()
-			require("lspsaga").setup({})
+			require("lspsaga").setup({
+				rename = {
+					in_select = false,
+				},
+			})
 		end,
 		requires = {
 			{ "nvim-tree/nvim-web-devicons" },
