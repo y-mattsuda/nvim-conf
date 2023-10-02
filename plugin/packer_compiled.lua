@@ -153,7 +153,7 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\nÅ\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\25space_char_blankline\6 \31show_current_context_start\2\25show_current_context\2\nsetup\bibl\frequire\0" },
+    config = { "\27LJ\2\nü\3\0\0\5\0\17\00026\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\3\0005\4\4\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\5\0005\4\6\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\a\0005\4\b\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\t\0005\4\n\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\v\0005\4\f\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\r\0005\4\14\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\15\0005\4\16\0B\0\4\1K\0\1\0\1\0\1\afg\f#56B6C2\16RainbowCyan\1\0\1\afg\f#C678DD\18RainbowViolet\1\0\1\afg\f#98C379\17RainbowGreen\1\0\1\afg\f#D19A66\18RainbowOrange\1\0\1\afg\f#61AFEF\16RainbowBlue\1\0\1\afg\f#E5C07B\18RainbowYellow\1\0\1\afg\f#E06C75\15RainbowRed\16nvim_set_hl\bapi\bvimÉ\2\1\0\6\0\r\0\0195\0\0\0006\1\1\0'\3\2\0B\1\2\0029\2\3\0019\4\4\0019\4\5\0043\5\6\0B\2\3\0016\2\1\0'\4\a\0B\2\2\0029\2\b\0025\4\v\0005\5\t\0=\0\n\5=\5\f\4B\2\2\1K\0\1\0\vindent\1\0\0\14highlight\1\0\0\nsetup\bibl\0\20HIGHLIGHT_SETUP\ttype\rregister\14ibl.hooks\frequire\1\b\0\0\15RainbowRed\18RainbowYellow\16RainbowBlue\18RainbowOrange\17RainbowGreen\18RainbowViolet\16RainbowCyan\0" },
     loaded = true,
     path = "/Users/youichi/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -169,7 +169,7 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    config = { "\27LJ\2\nY\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vrename\1\0\0\1\0\1\14in_select\1\nsetup\flspsaga\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -292,41 +292,41 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: typescript.nvim
-time([[Config for typescript.nvim]], true)
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15typescript\frequire\0", "config", "typescript.nvim")
-time([[Config for typescript.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\nÅ\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\25space_char_blankline\6 \31show_current_context_start\2\25show_current_context\2\nsetup\bibl\frequire\0", "config", "indent-blankline.nvim")
+try_loadstring("\27LJ\2\nü\3\0\0\5\0\17\00026\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\3\0005\4\4\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\5\0005\4\6\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\a\0005\4\b\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\t\0005\4\n\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\v\0005\4\f\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\r\0005\4\14\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0)\2\0\0'\3\15\0005\4\16\0B\0\4\1K\0\1\0\1\0\1\afg\f#56B6C2\16RainbowCyan\1\0\1\afg\f#C678DD\18RainbowViolet\1\0\1\afg\f#98C379\17RainbowGreen\1\0\1\afg\f#D19A66\18RainbowOrange\1\0\1\afg\f#61AFEF\16RainbowBlue\1\0\1\afg\f#E5C07B\18RainbowYellow\1\0\1\afg\f#E06C75\15RainbowRed\16nvim_set_hl\bapi\bvimÉ\2\1\0\6\0\r\0\0195\0\0\0006\1\1\0'\3\2\0B\1\2\0029\2\3\0019\4\4\0019\4\5\0043\5\6\0B\2\3\0016\2\1\0'\4\a\0B\2\2\0029\2\b\0025\4\v\0005\5\t\0=\0\n\5=\5\f\4B\2\2\1K\0\1\0\vindent\1\0\0\14highlight\1\0\0\nsetup\bibl\0\20HIGHLIGHT_SETUP\ttype\rregister\14ibl.hooks\frequire\1\b\0\0\15RainbowRed\18RainbowYellow\16RainbowBlue\18RainbowOrange\17RainbowGreen\18RainbowViolet\16RainbowCyan\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\n_\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fautotag\1\0\0\1\0\1\venable\2\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
-time([[Config for nvim-ts-autotag]], false)
--- Config for: autoclose.nvim
-time([[Config for autoclose.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
-time([[Config for autoclose.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: autoclose.nvim
+time([[Config for autoclose.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
+time([[Config for autoclose.nvim]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\n_\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\fautotag\1\0\0\1\0\1\venable\2\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
+-- Config for: typescript.nvim
+time([[Config for typescript.nvim]], true)
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15typescript\frequire\0", "config", "typescript.nvim")
+time([[Config for typescript.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-lspconfig ]]
 vim.cmd [[ packadd lspsaga.nvim ]]
 
 -- Config for: lspsaga.nvim
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+try_loadstring("\27LJ\2\nY\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vrename\1\0\0\1\0\1\14in_select\1\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
 
 time([[Sequenced loading]], false)
 
