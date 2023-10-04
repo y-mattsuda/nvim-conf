@@ -9,49 +9,6 @@ require("mason-lspconfig").setup_handlers({
 		require("lspconfig")[server].setup(opt)
 	end,
 })
--- require("mason-null-ls").setup({
--- 	automatic_setup = true,
--- 	handlers = {},
--- })
-local null_ls = require("null-ls")
-local sources = {
-	-- lua
-	null_ls.builtins.formatting.stylua,
-	-- python
-	null_ls.builtins.diagnostics.ruff,
-	null_ls.builtins.formatting.black,
-	-- go
-	null_ls.builtins.formatting.gofmt,
-	-- javascript, typescript
-	null_ls.builtins.formatting.prettier,
-	-- markdown
-	null_ls.builtins.diagnostics.markdownlint,
-	null_ls.builtins.diagnostics.textlint.with({ filetypes = { "markdown" } }),
-	-- protobuf
-	null_ls.builtins.diagnostics.buf,
-	null_ls.builtins.formatting.buf,
-	--go
-	null_ls.builtins.diagnostics.staticcheck,
-	require("typescript.extensions.null-ls.code-actions"),
-}
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-null_ls.setup({
-	sources = sources,
-	on_attach = function(client, bufnr)
-		-- format on save
-		-- ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#sync-formatting
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ async = false })
-				end,
-			})
-		end
-	end,
-})
 
 -- keymap
 -- built-in

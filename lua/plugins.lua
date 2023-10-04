@@ -20,10 +20,6 @@ require("packer").startup(function()
 	use("neovim/nvim-lspconfig")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
 	-- Tools for better development in rust using neovim's builtin lsp
 	use("simrat39/rust-tools.nvim")
 	-- A Lua plugin, written in TypeScript, to write TypeScript (Lua optional).
